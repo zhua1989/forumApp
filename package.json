@@ -1,0 +1,18 @@
+{
+  "name": "projecttwo",
+  "version": "1.0.0",
+  "description": "##User Stories - A user goes to homepage and sees a list of posts ordered by popularity - There is a link a user can click on the homepage to create a new Topic - This brings them to a form page to fill out Post Information - They will be text inputs.  Once they submit a topic they will be redirected to Homepage where it lists all the topoics - If they click on the topic they can see a list of the comments - On that page someone can click a link that brings them to a page to add a new comment - A user will be able to click a vote button which will give the topic another vote - They can't vote more than once",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "ejs": "^2.3.3",
+    "express": "^4.13.3",
+    "method-override": "^2.3.5",
+    "sqlite3": "^3.0.10"
+  }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<header>
+  <div class="custom-wrapper pure-g" id="menu">
+  <div class="pure-u-1 pure-u-md-1-3">
+      <div class="pure-menu pure-menu-horizontal custom-can-transform">
+          <ul class="pure-menu-list">
+              <li class="pure-menu-item"><a href="/threads/new" class="pure-menu-link">Add a Thread</a></li>
+          </ul>
+      </div>
+  </div>
+  </div>
+</header>
+<body>
+    <% rows.forEach(function(e){ %>
+          <h3>Post: <a href="/categories/<%=e.category_id%>/threads/<%=e.id%>"><%= e.message %></a> </h3>
+            <p>By:<%=e.user%></p>
+            <p>Votes:<%=e.votes%></p>
+            <a href="/threads/<%=e.id%>/edit">Edit this Post Information</a>
+        <%  }) %>
+</body>
+</html>

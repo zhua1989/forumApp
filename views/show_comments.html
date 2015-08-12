@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+<% threadObjs.forEach(function(e){ %>
+
+          <h3>Post:<%=e.message %></h3>
+            <p>By:<%=e.user%></p>
+            <p>Votes:<%=e.votes%></p>
+  <%  }) %>
+
+    <% commentObjs.forEach(function(e){ %>
+            <br><br><br>
+            <h4>Comments</h4>
+            <p><%=e.comment%></p>
+            by: <%=e.author%>
+        <%  }) %>
+</body>
+</html>
