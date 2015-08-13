@@ -20,33 +20,37 @@
 
 
 ## SQL Table Setup
-CREATE TABLE topics (
+CREATE TABLE categories (
+      id integer PRIMARY KEY autoincrement,
+      name varchar(255) NOT NULL
+);
+
+
+CREATE TABLE threads (
     id integer PRIMARY KEY autoincrement,
-    author text NOT NULL,
-    category text NOT NULL,
-    message text NOT NULL,
-    votes integer
+    user varchar(255) NOT NULL,
+    message varchar(255) NOT NULL,
+    votes integer,
+    category_id integer NOT NULL,
+    FOREIGN KEY(category_id) REFERENCES categories(id)
 );
 
 
 CREATE TABLE comments (
     id integer PRIMARY KEY autoincrement,
-    author text NOT NULL,
-    comment text NOT NULL,
-    topic_id,
+    author varchar(255) NOT NULL,
+    comment varchar(255) NOT NULL,
+    topic_id integer NOT NULL,
     FOREIGN KEY(topic_id) REFERENCES topics(id)
 );
 
 
+
 ## Routes
-- app.get('/') Get Request Index page
-- app.get('/topics/new') Get Request for New Topic form
-- app.get('/topics/:topicID') Get Request to Render Topic and comments
-- app.post('/topics') Post Request when adding a new Topic
-- app.get('/topics/:topicID/Comments/New')Get request render new comment form
-- app.post('/topics/:topicID/comments') Post request to add a comment
-- app.delete("/topics/:topicID") Delete Request to add a comment
--app.put("/topics/:topicID/comments/:commentID") Put request to edit a comment
+- app.get(/) Renders Index Page
+- app.get(/categories/:category_id/threads) Renders all threads for a corresponding topic
+- app.get(/categories/:category_id/threads/:idthreads_id/comments)  Render a page with a thread and corresponding comments
+ 
 
 
 

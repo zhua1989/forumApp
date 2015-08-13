@@ -14,16 +14,23 @@
       <div class="pure-menu pure-menu-horizontal custom-can-transform">
           <ul class="pure-menu-list">
               <li class="pure-menu-item"><a href="/threads/new" class="pure-menu-link">Add a Thread</a></li>
+
           </ul>
       </div>
   </div>
   </div>
 </header>
 <body>
-    <% rows.forEach(function(e){ %>
+    <% arrayTwo.forEach(function(e){ %>
           <h3>Post: <a href="/categories/<%=e.category_id%>/threads/<%=e.id%>"><%= e.message %></a> </h3>
             <p>By:<%=e.user%></p>
-            <p>Votes:<%=e.votes%></p>
+            <form method="POST" action="/threads/<%=e.id%>?_method=PUT">
+            <p>Votes: <%=e.votes%></p>
+            <input type="hidden" name="id" value="<%=e.id%>">
+            <input type="hidden" name="current_vote" value="<%=e.votes%>">
+            <input type="hidden" name="increase_vote" value="1">
+            <input type="submit" value=":)">
+            </form>
             <a href="/threads/<%=e.id%>/edit">Edit this Post Information</a>
         <%  }) %>
 </body>

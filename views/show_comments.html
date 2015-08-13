@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title></title>
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
@@ -8,19 +9,56 @@
     <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
+<header>
+  <div class="custom-wrapper pure-g" id="menu">
+  <div class="pure-u-1 pure-u-md-1-3">
+      <div class="pure-menu pure-menu-horizontal custom-can-transform">
+          <ul class="pure-menu-list">
+              <li class="pure-menu-item"><a href="/categories/<%=cat_id%>/threads/<%=thread_id%>/comments/new" class="pure-menu-link">Add a Comment</a></li>
+
+          </ul>
+      </div>
+  </div>
+  </div>
+</header>
 <body>
-<% threadObjs.forEach(function(e){ %>
+<% if (commentObjs.length>0) { %>
 
-          <h3>Post:<%=e.message %></h3>
-            <p>By:<%=e.user%></p>
-            <p>Votes:<%=e.votes%></p>
-  <%  }) %>
 
-    <% commentObjs.forEach(function(e){ %>
-            <br><br><br>
-            <h4>Comments</h4>
-            <p><%=e.comment%></p>
-            by: <%=e.author%>
+    <% threadObjs.forEach(function(e){ %>
+        <h3>Post:<%=e.message %></h3>
+        <p>By:
+            <%=e.user%>
+        </p>
+        <p>Votes:
+            <%=e.votes%>
+        </p>
         <%  }) %>
+            <h4>Comments</h4>
+            <% commentObjs.forEach(function(e){ %>
+                <br>
+                <br>
+                <br>
+                <p>
+                    <%=e.comment%>
+                </p>
+                by:
+                <%=e.author%>
+                <form  class="pure-form" method="POST" action="/categories/<%=cat_id%>/threads/<%=thread_id%>/comments/<%=e.id%>?_method=DELETE">
+                    <input type="submit" value="delete me" class="pure-button pure-button-primary">
+                </form>                    
+                <%  }) %>
+<% } else { %>
+    <% threadObjs.forEach(function(e){ %>
+        <h3>Post:<%=e.message %></h3>
+        <p>By:
+            <%=e.user%>
+        </p>
+        <p>Votes:
+            <%=e.votes%>
+        </p>
+        <%  }) %>
+<% } %>
 </body>
+
 </html>

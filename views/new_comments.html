@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+<h1> Add a new Comment!</h1>
+
+<form method="post" action="/categories/<%=cat_id%>/threads/<%=thread_id%>/comments">
+Author: <input type="text" name="author">
+Comment: <input type="text" name="comment">
+<input type="hidden" name="thread_id" value="<%=thread_id%>">
+<input type="submit">
+</form>
+</body>
+</html>
