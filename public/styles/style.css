@@ -1,25 +1,28 @@
 .container {
-    width: 350px;
-    padding: 10px;
-    font-family: 'Shadows Into Light', cursive;
+    width: 260px;
+    height: 260px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+    text-align: center;
+    margin-left: 115px;
+    margin-bottom: 1em;
 }
 
+
 /* resize images */
-.container img {
-    width: 100%;
-    height: auto;
-}
+
 
 header {
     text-align: center;
-    font-family: 'Shadows Into Light', cursive;
     font-size: 30px;
+    background: rgb(61, 79, 93);
 }
 
-.pure-menu {
+/*.pure-menu {
     text-align: center;
     font-family: 'Shadows Into Light', cursive;
-}
+}*/
 
 #header {
     border-width: 2px;
@@ -29,17 +32,27 @@ header {
 }
 
 h1 {
-    padding-left: 100px;
-    margin-top: 1px;
-    margin-bottom: 1px;
+    text-align: center;
+    font-family: 'Dosis', sans-serif;
 }
 
-p{
-    padding-left: 100px;
-    max-height: 10px;
-    margin-top: 1px;
-    margin-bottom: 1px;
+
+.content a {
+    font-family: 'Raleway', sans-serif;
+    font-size: 100%;
+    text-align: center;
+    margin-top: 47%;
+
 }
 
-.fa-facebook-official {
+.content {
+  font-family: 'Raleway', sans-serif;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  padding-bottom: 1em;
 }
+
+
+
+.fa-facebook-official {}

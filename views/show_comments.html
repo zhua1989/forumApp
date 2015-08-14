@@ -22,6 +22,7 @@
   </div>
 </header>
 <body>
+<h1><a href="/">Back to Main Page</a>
 <% if (commentObjs.length>0) { %>
 
 
@@ -44,8 +45,12 @@
                 </p>
                 by:
                 <%=e.author%>
+                <% if (e.geo_city) { %>                  
+                From:
+                <%=e.geo_city%>, <%=e.geo_state%>
+                <% } %>
                 <form  class="pure-form" method="POST" action="/categories/<%=cat_id%>/threads/<%=thread_id%>/comments/<%=e.id%>?_method=DELETE">
-                    <input type="submit" value="delete me" class="pure-button pure-button-primary">
+                    <input type="submit" value="delete post" class="pure-button pure-button-primary">
                 </form>                    
                 <%  }) %>
 <% } else { %>
