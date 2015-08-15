@@ -4,16 +4,24 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
-    <link rel="stylesheet" type="text/css" href="./styles/style.css">
-    <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/styles/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Dosis:600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
-<h1> Add a new Thread!</h1>
-<form method="post" action="/categories/:cat_id/threads">
-User: <input type="text" name="user">
-Message: <input type="text" name="message">
-Category: <select name="category_id">
+
+<h1 id="new_thread"> Add a new Thread </h1>
+
+<div class="form">
+<form class = "pure-form" method="post" action="/categories/:cat_id/threads">
+<fieldset class="pure-group">
+User: <input class="pure-input-1-2" type="text" name="user"><br>
+Message:
+      <textarea name = "message" class="pure-input-1-2" placeholder="Your New Thread Here"></textarea>
+    </fieldset><Br>
+Category <br>
+    <select class="pure-input-1-2" name="category_id">
     <option value="1">Botany</option>
     <option value="2">Entertainment</option>
     <option value="3">Sports</option>
@@ -23,8 +31,13 @@ Category: <select name="category_id">
     <option value="7">Mens Health</option>
     <option value="8">Mysteries</option>
 </select>
-<input type="hidden" name="votes" value="0">
-<input type="submit">
+<input type="hidden" name="votes" value="0"><br>
+</fieldset>
+<br>
+<button type="submit" class="pure-button pure-input-1-2 pure-button-primary">Submit</button>
 </form>
 </body>
+<footer>
+  <i class="fa fa-cog fa-spin fa-2x"></i>
+</footer>
 </html>

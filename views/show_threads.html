@@ -4,16 +4,18 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
-    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+    <link rel="stylesheet" type="text/css" href="/styles/style.css">
     <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
 </head>
 <header>
   <div class="custom-wrapper pure-g" id="menu">
   <div class="pure-u-1 pure-u-md-1-3">
-      <div class="pure-menu pure-menu-horizontal custom-can-transform">
+      <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
           <ul class="pure-menu-list">
-              <li class="pure-menu-item"><a href="/threads/new" class="pure-menu-link">Add a Thread</a></li>
+              <li class="pure-menu-item"><a href="/threads/new" class="pure-menu-link pure-menu-heading">Add a Thread</a></li>
 
           </ul>
       </div>
@@ -21,19 +23,25 @@
   </div>
 </header>
 <body>
-  <h1><a href="/">Back to Main Page</a>
+  <section class="headerSect"><h1><a href="/" class='pure-menu-link pure-menu-heading thread_head'>Back to Main Page</a></h1></section>
     <% arrayTwo.forEach(function(e){ %>
-          <h3>Post: <a href="/categories/<%=e.category_id%>/threads/<%=e.id%>"><%= e.message %></a> </h3>
+          <h3><a href="/categories/<%=e.category_id%>/threads/<%=e.id%>"><%= e.message %></a> </h3>
             <p>By:<%=e.user%></p>
-            <form method="POST" action="/categories/<%=e.category_id%>/threads/<%=e.id%>?_method=PUT">
-            <p>Votes: <%=e.votes%></p>
+            <form class="voteClass"method="POST" action="/categories/<%=e.category_id%>/threads/<%=e.id%>?_method=PUT">
+            <p id="votes">Votes: <%=e.votes%></p>
             <input type="hidden" name="id" value="<%=e.id%>">
             <input type="hidden" name="current_vote" value="<%=e.votes%>">
             <input type="hidden" name="increase_vote" value="1">
-            <button type="submit"> <i class="fa fa-thumbs-up fa-2x"></i> </button> 
+            <button type="submit"> <i class="fa fa-thumbs-up fa-1x"></i> </button> 
             </form>
-                <form  class="pure-form" method="POST" action="/categories/<%=e.category_id%>/threads/<%=e.id%>?_method=DELETE">
-                    <input type="submit" value="delete me" class="pure-button pure-button-primary">
+            <form class="voteClass" method="POST" action="/categories/<%=e.category_id%>/threads/<%=e.id%>?_method=PUT">
+            <input type="hidden" name="id" value="<%=e.id%>">
+            <input type="hidden" name="current_vote" value="<%=e.votes%>">
+            <input type="hidden" name="decrease_vote" value="-1">
+            <button type="submit"> <i class="fa fa-thumbs-down fa-1x"></i> </button> 
+            </form>
+                <form  class="pure-form voteClass" method="POST" action="/categories/<%=e.category_id%>/threads/<%=e.id%>?_method=DELETE">
+                    <input type="submit" value="delete thread" class="pure-button pure-button-primary">
                 </form>           <%  }) %>
 </body>
 </html>

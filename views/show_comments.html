@@ -5,16 +5,18 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
-    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+    <link rel="stylesheet" type="text/css" href="/styles/style.css">
     <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
 </head>
 <header>
   <div class="custom-wrapper pure-g" id="menu">
   <div class="pure-u-1 pure-u-md-1-3">
-      <div class="pure-menu pure-menu-horizontal custom-can-transform">
+      <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
           <ul class="pure-menu-list">
-              <li class="pure-menu-item"><a href="/categories/<%=cat_id%>/threads/<%=thread_id%>/comments/new" class="pure-menu-link">Add a Comment</a></li>
+              <li class="pure-menu-item"><a href="/categories/<%=cat_id%>/threads/<%=thread_id%>/comments/new" class="pure-menu-link pure-menu-heading">Add a Comment</a></li>
 
           </ul>
       </div>
@@ -22,12 +24,12 @@
   </div>
 </header>
 <body>
-<h1><a href="/">Back to Main Page</a>
+<h1><a href="/" class="pure-menu-link pure-menu-heading">Back to Main Page</a>
 <% if (commentObjs.length>0) { %>
 
 
     <% threadObjs.forEach(function(e){ %>
-        <h3>Post:<%=e.message %></h3>
+        <h3>Thread: <%=e.message %></h3>
         <p>By:
             <%=e.user%>
         </p>
