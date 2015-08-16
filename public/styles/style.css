@@ -51,6 +51,10 @@ h1 {
     margin-top: 5%;
     height: 150px;
     padding-bottom: 16px;
+    position: relative;
+    z-index: 1;
+    background: #1f8dd6;
+
 /*    font-family: 'Lato', sans-serif;
 */}
 
@@ -82,6 +86,13 @@ h1 {
   margin-top: 20%;
   margin-left: 25%;
   color: red;
+  background: #2d3e50;
+
+}
+
+button {
+  background: #2d3e50;
+  border-radius: 10px; 
 }
 
 
@@ -89,11 +100,12 @@ h1 {
     background: #1f8dd6;
     z-index: 1;
     overflow: hidden;
-    width: 100%;
+    width: 105%;
     height: 45%;
     top: 2em;
     left: 0;
     position: relative !important;
+    z-index: 1;
 }
 
  .pure-button-primary {background: white;
@@ -119,6 +131,7 @@ p {
   font-family: 'Raleway', sans-serif;
   text-align: left;
   margin-left: 15%;
+  color: #FFF;
 }
 
 a {
@@ -131,12 +144,14 @@ h3 {
     font-family: 'Raleway', sans-serif;
     text-align: left;
     margin-left: 15%;
+    color: #FFF;
 }
 
 h4 {
   font-family: 'Raleway', sans-serif;
   text-align: left;
   margin-left: 15%;
+  color: #FFF;
 }
 
 .home-menu a {
@@ -149,9 +164,8 @@ h4 {
 
 #new_comment {
   padding-right: 10px;
-  background: #2d3e50;
   font-family: 'Raleway', sans-serif;
-  background: #2d3e50;
+  background: #1f8dd6;
   color: #FFF;
 
 }
@@ -189,4 +203,9 @@ h4 {
   padding: 1em;
   background: #2d3e50;
   color: #FFF ;
+}
+body {
+
+  background: #2d3e50;
+
 }

@@ -8,14 +8,19 @@
     <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <style>
+    form {
+      margin-right: 14em;
+    }
+    </style>
 
 </head>
 <body>
 <h1 id="new_comment"> Add a New Comment</h1>
 <div class="form">
 <form class="pure-form" method="post" action="/categories/<%=cat_id%>/threads/<%=thread_id%>/comments">
-Author: <br><input class="pure-input-1-2" type="text" name="author"><br><br>
-Comment: <br><textarea name = "message" class="pure-input-1-2" placeholder="Your New Comment Here"></textarea>
+<p>Author: <br><input class="pure-input-1-2" type="text" name="author"></p><br><br>
+<p>Comment: <br><textarea name = "message" class="pure-input-1-2" placeholder="Your New Comment Here"></textarea>
 <input type="hidden" name="thread_id" value="<%=thread_id%>">
 <br><br>
 <input class="pure-button pure-input-1-2 pure-button-primary" type="submit">
@@ -23,6 +28,5 @@ Comment: <br><textarea name = "message" class="pure-input-1-2" placeholder="Your
 </div>
 </body>
 <footer>
-  <i class="fa fa-cog fa-spin fa-2x"></i>
 </footer>
 </html>
