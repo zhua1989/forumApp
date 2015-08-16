@@ -64,6 +64,13 @@ CREATE TABLE comments (
 
 ##WIREFRAMES
 ![./IMG_0441.JPG](./IMG_0441.JPG)
+![./IMG_0445.JPG](./IMG_0445.JPG)
+![./IMG_0446.JPG](./IMG_0446.JPG)
+![./IMG_0447.JPG](./IMG_0447.JPG)
+![./IMG_0448.JPG](./IMG_0448.JPG)
+
+
+
 
 ##PseudoCode
 - Set up App.Listen on popularity
@@ -76,3 +83,6 @@ CREATE TABLE comments (
 - Set up get Request to render new Comments form
 - Set up post Request for new comments
 - Set up Put request to edit Comments
+
+##CSS Layout
+-Used pure grid layout and borrowed color scheme and some css snippets from various layout examples
