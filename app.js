@@ -116,8 +116,6 @@ app.post("/categories/:cat_id/threads/:thread_id/comments", function(req, res) {
         if (err) {
             console.log(err)
         }
-        var idOfLastInsert = this.lastID;
-        console.log(idOfLastInsert)
         res.redirect("/categories/" + req.params.cat_id + "/threads/" + req.params.thread_id)
 
     })
