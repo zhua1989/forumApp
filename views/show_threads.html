@@ -23,7 +23,10 @@
   </div>
 </header>
 <body>
+<div class="splash-container">
   <section class="headerSect"><h1><a href="/" class='pure-menu-link pure-menu-heading thread_head'>Back to Main Page</a></h1></section>
+  </div>
+  <div class="threadContainer">
     <% arrayTwo.forEach(function(e){ %>
           <h3><a href="/categories/<%=e.category_id%>/threads/<%=e.id%>"><%= e.message %></a> </h3>
             <p>By:<%=e.user%></p>
@@ -43,5 +46,6 @@
                 <form  class="pure-form voteClass" method="POST" action="/categories/<%=e.category_id%>/threads/<%=e.id%>?_method=DELETE">
                     <input type="submit" value="delete thread" class="pure-button pure-button-primary">
                 </form>           <%  }) %>
+                </div>
 </body>
 </html>
