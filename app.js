@@ -44,8 +44,6 @@ app.get("/", function(req, res) {
 app.get("/categories/:cat_id/threads/", function(req, res) {
     var template = fs.readFileSync("./views/show_threads.html", "UTF8")
     console.log(req.params)
-
-
             db.all("SELECT threads.id, threads.message, threads.user, threads.category_id,threads.votes FROM threads INNER JOIN categories ON categories.id = threads.category_id WHERE category_id=? ORDER BY votes DESC", req.params.cat_id, function(err, rows) {
                 if (err) {
                     console.log(err)
@@ -53,14 +51,12 @@ app.get("/categories/:cat_id/threads/", function(req, res) {
                     console.log(rows)
                     var arrayTwo = rows;
                     var rendered = ejs.render(template, {
-                        arrayTwo: arrayTwo
+                        arrayTwo: arrayTwo,
+                        cat_id: req.params.cat_id,
                     })
                     res.send(rendered)
                 }
-            })
-        
-
-    
+            })       
 })
 
 
@@ -108,6 +104,8 @@ app.get("/categories/:cat_id/threads/:thread_id/comments/new/", function(req, re
     res.send(rendered)
 })
 
+//post request to submit new comments
+
 app.post("/categories/:cat_id/threads/:thread_id/comments", function(req, res) {
     console.log(req.body)
 
@@ -133,7 +131,7 @@ app.get("/threads/new", function(req, res) {
     res.send(newForm)
 })
 
-//Post request that adds it to the database and redirects to home page
+//Post request that adds a thread to the database and redirects to thread page in that same category
 app.post("/categories/:cat_id/threads", function(req, res) {
     console.log(req.body)
     db.run("INSERT INTO threads (user,message,category_id,votes) VALUES(?,?,?,?)", req.body.user, req.body.message, parseInt(req.body.category_id), parseInt(req.body.votes), function(err) {
@@ -143,7 +141,6 @@ app.post("/categories/:cat_id/threads", function(req, res) {
             res.redirect("/categories/" + req.body.category_id + "/threads/")
         }
     })
-
 })
 
 
@@ -151,6 +148,7 @@ app.post("/categories/:cat_id/threads", function(req, res) {
 //Put request to add a vote for a thread
 app.put("/categories/:cat_id/threads/:thread_id", function(req, res) {
     console.log(req.body)
+    if (req.body.increase_vote) {
     db.run("UPDATE threads SET votes = ?  WHERE id= ? ", parseInt(req.body.current_vote) + parseInt(req.body.increase_vote), req.body.id, function(err) {
         if (err) {
             console.log(err)
@@ -160,8 +158,20 @@ app.put("/categories/:cat_id/threads/:thread_id", function(req, res) {
         }
     });
 
-
+      
+    } else if (req.body.decrease_vote){
+      console.log(req.body)
+      db.run("UPDATE threads SET votes = ? WHERE id=?", parseInt(req.body.current_vote) + parseInt(req.body.decrease_vote), req.body.id, function(err){
+        if (err) {
+          console.log(err)
+        } else {
+          res.redirect("/categories/" + req.params.cat_id + "/threads/")
+        }
+      })     
+    }
 })
+
+
 
 
 
@@ -171,7 +181,7 @@ app.delete("/categories/:cat_id/threads/:thread_id/comments/:comment_id", functi
         if (err) {
             console.log(err)
         }
-        res.redirect("/categories/:cat_id/threads/:thread_id/")
+        res.redirect("/categories/" +req.params.cat_id + "/threads/" + req.params.thread_id)
     })
 })
 
@@ -181,6 +191,6 @@ app.delete("/categories/:cat_id/threads/:thread_id/", function(req, res) {
         if (err) {
             console.log(err)
         }
-        res.redirect("/categories/:cat_id/")
+        res.redirect("/categories/" + req.params.cat_id + "/threads")
     })
 })

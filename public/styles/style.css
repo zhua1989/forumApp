@@ -3,10 +3,13 @@
     height: 260px;
     border-style: solid;
     border-width: 3px;
-    border-color: black;
+    border-color:rgb(176, 202, 219);
     text-align: center;
     margin-left: 115px;
     margin-bottom: 1em;
+    margin-top: 4em;
+    background: rgb(61, 79, 93);
+
 }
 
 
@@ -33,8 +36,23 @@ header {
 
 h1 {
     text-align: center;
-    font-family: 'Dosis', sans-serif;
-}
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
+    font-size: 60px;
+    font-weight: bold;
+    color: white;
+    border: 4px solid white;
+    padding: 1em 1.6em;
+    font-weight: 100;
+    border-radius: 5px;
+    line-height: 1em;
+    width: 60%;
+    margin-left: 15%;
+    margin-top: 5%;
+    height: 150px;
+    padding-bottom: 16px;
+/*    font-family: 'Lato', sans-serif;
+*/}
 
 
 .content a {
@@ -42,17 +60,133 @@ h1 {
     font-size: 100%;
     text-align: center;
     margin-top: 47%;
+    color: #fff;
 
 }
 
 .content {
   font-family: 'Raleway', sans-serif;
   width: 100%;
-  height: auto;
-  margin: auto;
-  padding-bottom: 1em;
+  height: auto;  
+  padding-right: 6em;
+}
+
+.form {
+  margin-left: 30%;
+  font-family: 'Raleway', sans-serif;
+
+
+}
+
+.fa {
+  margin-top: 20%;
+  margin-left: 25%;
+  color: red;
 }
 
 
+.splash-container {
+    background: #1f8dd6;
+    z-index: 1;
+    overflow: hidden;
+    width: 100%;
+    height: 45%;
+    top: 2em;
+    left: 0;
+    position: relative !important;
+}
 
-.fa-facebook-official {}
+ .pure-button-primary {background: white;
+    color: #1f8dd6;
+    border-radius: 3px;
+    font-size: 80%;
+  }
+
+  .home-menu {
+    padding: 0.1em;
+    text-align: right;
+    box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
+    background: #2d3e50;
+}
+
+.home-menu .pure-menu-heading {
+    color: white;
+    font-weight: 400;
+    font-size: 80%;
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+  text-align: left;
+  margin-left: 15%;
+}
+
+a {
+  font-family: 'Raleway', sans-serif;
+  color: #FFF;
+
+}
+
+h3 {
+    font-family: 'Raleway', sans-serif;
+    text-align: left;
+    margin-left: 15%;
+}
+
+h4 {
+  font-family: 'Raleway', sans-serif;
+  text-align: left;
+  margin-left: 15%;
+}
+
+.home-menu a {
+    color: #6FBEF3;
+}
+
+.pure-menu-link {
+  font-family: 'Raleway', sans-serif;
+}
+
+#new_comment {
+  padding-right: 10px;
+  background: #2d3e50;
+  font-family: 'Raleway', sans-serif;
+  background: #2d3e50;
+  color: #FFF;
+
+}
+
+#new_thread {
+  margin-left: 12%;
+  text-align: center;
+  background: #2d3e50;
+  color: #FFF;
+  font-family: 'Raleway', sans-serif;
+}
+
+.headerSect {
+  margin-right: 3em;
+}
+
+.voteClass {
+  text-align: left;
+  margin-left: 15%;
+}
+
+#votes {
+
+  text-align: left;
+  margin-left: .1em;
+}
+
+.index {
+  padding-top: 10%;
+}
+
+
+.threadContainer {
+
+  padding: 1em;
+  background: #2d3e50;
+  color: #FFF ;
+}

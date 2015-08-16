@@ -49,8 +49,16 @@ CREATE TABLE comments (
 ## Routes
 - app.get(/) Renders Index Page
 - app.get(/categories/:category_id/threads) Renders all threads for a corresponding topic
-- app.get(/categories/:category_id/threads/:idthreads_id/comments)  Render a page with a thread and corresponding comments
- 
+- app.get(/categories/:cat_id/threads/:thread_id) Render comments within thread
+ app.get(/categories/:cat_id/threads/:thread_id/comments/new/) renders new thread form
+- app.post(/categories/:cat_id/threads/:thread_id/comments") post request to submit a new comment
+- app.get(/categories/:cat_id/threads/new) get request to render new thread form
+- app.post(/categories/:cat_id/threads) Post request to add a new thread
+- app,put(/categories/:cat_id/threads/:thread_id) adds or decreases a vote on a thread
+- app.delete(/categories/:cat_id/threads/:thread_id/comments/:comment_id)
+
+- app.delete(/categories/:cat_id/threads/:thread_id) delete a thread
+
 
 
 
